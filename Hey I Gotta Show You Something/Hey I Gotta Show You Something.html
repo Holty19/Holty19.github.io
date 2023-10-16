@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link href="css/if.css" rel="stylesheet" type="text/css">
+</head>
+	
+<body>
+	
+<h1>Some Memorable Movies</h1>
+<h3><span class="ital">Hey I Gotta Show You Something</span> (Isabella Holterman, 2022)</h3>
+	
+<div class="sidebyside">
+<img class="filmstill" onClick="onClick_DTRT_img01()" src="images/HIGSYS 1.png" alt="Hey I Gotta Show You Something">
+<img class="filmstill" onClick="onClick_DTRT_img02()" src="images/HIGSYS 2.png" alt="Hey I Gotta Show You Something">
+<img class="filmstill" onClick="onClick_DTRT_img03()" src="images/HIGSYS 3.png" alt="Hey I Gotta Show You Something">
+</div>
+	
+<p class="filminfo" id="DTRT_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem omnis placeat, expedita nulla architecto. Atque dolorem reprehenderit tempore neque at nesciunt cumque fugit dignissimos. Perferendis ipsum magnam aperiam, enim dolores porro impedit. Eum et, velit at sed esse provident totam corporis voluptatibus, saepe, vitae facere tempora. Quod eum minus illum.</p>
+	
+<button type="button" onClick="gotoMovie()" id="gotoMovie_btn">Go to the Movie</button>
+
+	
+</body>
+<script>
+//DO THE RIGHT THING SECTION************************************************************************************************************************************
+
+var gotoMovie_btn = document.getElementById("gotoMovie_btn");
+gotoMovie_btn.style.visibility = "hidden";
+	
+	var img01_clicked = false
+	var img02_clicked = false
+	var img03_clicked = false
+	
+var DTRT_text = document.getElementById("DTRT_text");
+var DTRT00 = "Hey, I Gotta Show You Something was one of the first movies I wrote, directed, filmed, and edited. Inspired heavily by Weekend at Bernie's, I focused the movie mostly on written dialogue and physical comedy. While I don't think it is my best work, it holds a special place in my heart and is my first work as a filmmaker and writer.";
+	
+var DTRT01 = "The filming of Hey, I Gotta Show You Something took place at South Metro Fishing Pier in my hometown. I chose this location because of how far away the abandoned boat dock is from the entrance of the pier, adding to the comedic dread the characters feel having to drag the body all the way back to the car. The pier is also not very well known, so we didn't have to worry about the police being called on us while filming."
+
+var DTRT02 = "The color of the hoodie worn by the dead body was a deliberate choice. Compared to the other colors of the scenery and character, which are all very green and bright. The purple hoodie was a color to help the dead body stand out but also was not so bright that it was distracting to the audience."
+
+var DTRT03 = "This was one of the last scenes filmed, the actor playing the dead body (Abigail Hanzel) was wearing multiple layers and goggles to protect her face and body from the water and sand. While I did buy a prop dummy for this scene and a scene later, we ended up only using the dummy for one scene because Abby was so willing to lay in the water. She laid there for 30 seconds while Mitchell and Ryan acted out their scene, in the very cold polluted Lake Michigan waters. Abby is a very good actor, some of her other works include Apple Juice Jones."
+	
+DTRT_text.innerHTML = DTRT00;
+
+
+function onClick_DTRT_img01(){
+	DTRT_text.innerHTML = DTRT01;
+	img01_clicked = true;
+	console.log("img01_clicked = " + img01_clicked);
+	revealButton();
+}
+
+function onClick_DTRT_img02(){
+	DTRT_text.innerHTML = DTRT02;
+	img02_clicked = true;
+	console.log("img02_clicked = " + img02_clicked);
+	revealButton();
+}
+	
+function onClick_DTRT_img03(){
+	DTRT_text.innerHTML = DTRT03;
+	img03_clicked = true;
+	console.log("img03_clicked = " + img03_clicked);
+}
+	
+	function revealButton () {
+		if (img01_clicked && img02_clicked && img03_clicked){
+			console.log("REVEAL BUTTON");
+			gotoMovie_btn.style.visibility = "visible"
+		}
+	}
+
+	function gotoMovie(){
+		window.open("https://www.youtube.com/watch?v=pgxdd2CqcUs&ab_channel=IsabellaHolterman");
+	}
+	
+</script>
+</html>
