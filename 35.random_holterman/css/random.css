@@ -1,0 +1,7 @@
+@charset "utf-8";
+.sidebyside .foodImage {
+    width: 400px;
+    border-style: solid;
+    display: compact;
+    height: 250px;
+}
