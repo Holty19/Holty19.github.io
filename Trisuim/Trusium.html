@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="css/trusim.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div>
+  <video id="displayed_video" muted="muted" autoplay="autoplay" loop="loop" >
+    <source src="Video/cfcyfghv.mp4" type="video/mp4">
+  </video>
+</div>
+	
+<div class="centered_text">
+	<h1 id="truism2" onmouseover="OnTruismText()" onmouseout="outTruismText()" onClick="changeVideo()">Truism Goes Here</h1>
+	</div>
+	
+<script>
+	
+	// stuff for sound
+	
+	var mySound = new Audio("sounds/spooky.mp3");
+	
+	var channel = 1;
+	var pausedAt = 0;
+	
+	//refrence to video element
+	
+	var displayed_video = document.getElementById("displayed_video")
+	
+	//refrences to the videos
+	
+	var cfc = "video/cfcyfghv.mp4";
+	var owen = "video/owen.mp4";
+	
+function OnTruismText(){
+	console.log("clicked Truism Text");
+	document.getElementById("displayed_video").style.filter = "sepia(100%)";
+}
+
+	function outTruismText(){
+		console.log("moving out of truism text");
+		document.getElementById("displayed_video").style.filter = "sepia(0%)";
+	}
+	
+	function changeVideo(){
+		console.log("will change Video");
+		pausedAt = displayed_video.currentTime;
+		if (channel == 0){
+			displayed_video.src = cfc;
+			displayed_video.currentTime = pausedAt;
+			channel = 1;
+		}
+		else{
+		displayed_video.src = owen;
+		displayed_video.currentTime = pausedAt;
+			channel = 0;
+	}
+		mySound.play();
+	}
+	
+</script>
+</body>
+</html>
