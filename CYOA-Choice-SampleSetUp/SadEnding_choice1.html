@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Lets Chat</title>
+<link href="css/CYOA_sample.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<!-- THE TITLE ABOVE THE VIDEO -->
+
+<h1> Is It...Though?</h1>
+
+<!-- THE VIDEO -->
+
+<div class = "vidCenter">    
+<video id="displayedVideo" preload="auto" controls>
+<source src="videos/Sad Ending.mp4" type="video/mp4">
+</video>
+</div>
+
+<!-- THE CAPTION or PARAGRAPH UNDERNEATH THE VIDEO -->
+<!-- this appears when the video reaches its end -->
+
+<p id="caption">
+Good Job You Made Them Sad!
+</p>
+
+<!-- THE TWO BUTTONS UNDERNEATH THE CAPTION - CAN EASILY ADD MORE BUTTONS -->
+<!-- these appear when the video reaches its end -->
+
+<div id="DIVforButtons">
+<p>
+<button id="topBTN" onClick="buttonOne()">Try Again?</button>  
+</p>    
+
+</div>
+
+<script>
+
+    document.getElementById('displayedVideo').addEventListener('ended',whenVideoEnds,false);
+        
+    var topBTN = document.getElementById("topBTN");
+    var bottomBTN = document.getElementById("bottomBTN"); 
+   
+    var caption = document.getElementById("caption");    
+
+    caption.style.display = 'none';    
+    topBTN.style.display = 'none';
+    bottomBTN.style.display = 'none';        
+
+    function whenVideoEnds(e) {
+		// these three commands make the caption and the 2 buttons visible
+        caption.style.display = 'block';    
+        topBTN.style.display = 'block';
+        bottomBTN.style.display = 'block';
+    }
+        
+		// MAKE SURE THE WINDOW OPENS THE FILE NAME on YOUR DIRECTORY 
+		// Lines 63 and 64 are the only places you have to make a change
+ function buttonOne() {
+        window.open ('opening.html','_self',false)
+  }
+        
+    
+        
+</script>
+    
+</body>
+</html>
